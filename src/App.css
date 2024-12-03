@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 10px;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000;
+  cursor: pointer;
+  box-shadow: 1px 1px 11px black;
+  background-color: #61dafb;
+}
+
+.icon {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+body {
+  margin: 0;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
