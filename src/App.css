@@ -63,10 +63,19 @@
 
 body {
   margin: 0;
-  height: 80vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f0f0f0;
+  background-color: #c3c3d2;
 }
+
+.center-container {
+  display: grid;
+}
+
+
+
+
+
 

@@ -28,32 +28,70 @@ export default function Login() {
         return playerTwo.length === 0 || playerTwo.trim() === '';
     }
 
-    return (
-        <div style={{paddingTop: '10px'}}>
-            {!isLoggedIn ? (
-                <div>
-                    <h3>Player 1:</h3>
+    const styleLogin = {
+        width: "100%",
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundImage: "url('/background-tictactoi.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+    };
+
+/* regular buttons
+<h3 style={{color: "yellow"}}><b>Player 1:</b></h3>
                     <input
                         type="text"
-                        placeholder="enter your name"
+                        placeholder="enter your name player 1"
                         value={playerOne}
                         onChange={(e) => setPlayerOne(e.target.value)}
                     />
-                    <h3>Player 2:</h3>
+                    <h3 style={{color: "black"}}><b>Player 2:</b></h3>
                     <input
                         type="text"
-                        placeholder="enter your name"
+                        placeholder="enter your name player 2"
                         value={playerTwo}
                         onChange={(e) => setPlayerTwo(e.target.value)}
                     /><br/> <br/>
-                    <button type="button"
-                            className="btn btn-secondary"
-                            onClick={dataPlayers}>Let's Play
-                    </button>
+ */
+
+    return (
+        <div style={styleLogin}>
+            {!isLoggedIn ? (
+                <div>
+                    <div className="input-group">
+                        <span className="input-group-text">Player 1</span>
+                        <textarea className="form-control" aria-label="With textarea"
+                                  placeholder={"enter your name"}
+                                  value={playerOne}
+                                  onChange={(e) => setPlayerOne(e.target.value)}
+                        ></textarea>
+                    </div>
+                    <br/>
+                    <div className="input-group">
+                        <span className="input-group-text">Player 2</span>
+                        <textarea className="form-control" aria-label="With textarea"
+                                  placeholder={"enter your name"}
+                                  value={playerTwo}
+                                  onChange={(e) => setPlayerTwo(e.target.value)}
+                        ></textarea>
+                    </div>
+                    <br/>
+                    <div className="center-container">
+                        <button type="button"
+                                className="btn btn-secondary"
+                                onClick={dataPlayers}>Let's Play
+                        </button>
+                    </div>
                 </div>
             ) : (
-                <Game playerOne={playerOne} playerTwo={playerTwo} />
+                <Game playerOne={playerOne} playerTwo={playerTwo}/>
             )}
         </div>
     );
+
+
 }
